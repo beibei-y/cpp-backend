@@ -1,0 +1,46 @@
+// 数据类型
+// 题目：编写一个C++程序，要求用户输入两个整数（使用int类型），然后输出它们的和、差、积和商（使用float或double以避免整数除法问题）。
+
+#include <iostream>
+
+class caculator {
+    private:
+        int num1;
+        int num2;
+    public:
+        caculator(int _num1, int _num2)
+            : num1(_num1), num2(_num2) {}
+
+        ~caculator() {}
+
+        void show_res(int res) {
+            std::cout << "结果为： " << res << std::endl;
+        }
+        void add(void) {
+            show_res(this->num1 + this->num2);
+        }
+
+        void minus(void) {
+            show_res(this->num1 - this->num2);
+        }
+        
+        void multiply(void) {
+            show_res(this->num1 * this->num2);
+        }
+
+        void divide(void) {
+            show_res(this->num1 / this->num2);
+        }
+};
+
+int main() {
+    std::cout << "一个简单的计算器，未考虑特殊情况" << std::endl;
+    int a = 0, b = 0;
+    std::cin >> a >> b;
+    caculator c(a, b);
+    c.add();
+    c.minus();
+    c.multiply();
+    c.divide();
+    return 0;
+}
